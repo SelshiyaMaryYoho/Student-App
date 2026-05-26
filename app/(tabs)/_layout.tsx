@@ -1,33 +1,92 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { Tabs } from "expo-router";
+import { Image, View } from "react-native";
+import Header from "../../src/components/common/Header";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+    <Tabs screenOptions={{
+       header: () => <Header />,
+
+       tabBarShowLabel: false,
+
+        tabBarStyle: {
+          height: 70,
+          paddingTop: 10,
+          paddingBottom: 10,
+          borderTopWidth: 0,
+          elevation: 10,
+          backgroundColor: "#FFFFFF",
+        },
+      }}
+    >
+    
+      <Tabs.Screen name="index" options={{ tabBarIcon: ({ focused }) => (
+            <View style={{ backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 12, borderRadius: 14,}} >
+              <Image source={
+                  focused
+                    ? require("../../src/assets/mainImages/homeBlueicon.png")
+                    : require("../../src/assets/mainImages/homeGrayicon.png")
+                }  style={{ width: 20, height: 20 }}
+              />
+            </View>
+          ),
         }}
       />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+
+      <Tabs.Screen  name="classes" options={{  tabBarIcon: ({ focused }) => (
+            <View style={{  backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 12, borderRadius: 14,}}>
+              <Image source={ focused
+                    ? require("../../src/assets/mainImages/classesBlue.png")
+                    : require("../../src/assets/mainImages/classesGrayicon.png")
+                }  style={{ width: 20, height: 20}}
+              />
+            </View>
+          ),
+        }}
+      />
+
+      
+      <Tabs.Screen name="attendance" options={{ tabBarIcon: ({ focused }) => (
+            <View  style={{  backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 10,  borderRadius: 14, }}>
+              <Image source={ focused
+                    ? require("../../src/assets/mainImages/attendanceBlue.png")
+                    : require("../../src/assets/mainImages/attendanceGrayicon.png")
+                }
+                style={{ width: 20, height: 20 }}
+              />
+            </View>
+          ),
+        }}
+      />
+
+   
+      <Tabs.Screen name="payments" options={{ tabBarIcon: ({ focused }) => (
+            <View style={{ backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 10, borderRadius: 14, }}>
+              <Image
+                source={
+                  focused
+                    ? require("../../src/assets/mainImages/paymentBlue.png")
+                    : require("../../src/assets/mainImages/paymentGrayicon.png")
+                }
+                style={{ width: 20, height: 20 }}
+              />
+            </View>
+          ),
+        }}
+      />
+
+      
+      <Tabs.Screen name="profile"  options={{ tabBarIcon: ({ focused }) => (
+            <View style={{ backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 10, borderRadius: 14,}}>
+              <Image source={
+                   focused
+                    ? require("../../src/assets/mainImages/profileGrayicon.png")
+                    : require("../../src/assets/mainImages/profileGrayicon.png")
+                }
+                style={{ width: 20, height: 20 }}
+              />
+            </View>
+          ),
         }}
       />
     </Tabs>
