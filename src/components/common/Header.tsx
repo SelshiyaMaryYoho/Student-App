@@ -16,7 +16,7 @@ export default function Header() {
           paddingHorizontal: 16,
           paddingTop: 12,
           paddingBottom: 12,
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "#FBF9F9",
         }}
       >
         

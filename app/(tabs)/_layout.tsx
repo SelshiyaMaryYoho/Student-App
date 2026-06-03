@@ -6,13 +6,10 @@ export default function TabLayout() {
   return (
     <Tabs screenOptions={{
        header: () => <Header />,
-
-       tabBarShowLabel: false,
-
+       tabBarShowLabel: true,
         tabBarStyle: {
           height: 70,
           paddingTop: 10,
-          paddingBottom: 10,
           borderTopWidth: 0,
           elevation: 10,
           backgroundColor: "#FFFFFF",
@@ -20,8 +17,8 @@ export default function TabLayout() {
       }}
     >
     
-      <Tabs.Screen name="index" options={{ tabBarIcon: ({ focused }) => (
-            <View style={{ backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 12, borderRadius: 14,}} >
+      <Tabs.Screen name="index" options={{ title: "Home", tabBarIcon: ({ focused }) => (
+            <View style={{ backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 18, borderRadius: 14,}} >
               <Image source={
                   focused
                     ? require("../../src/assets/mainImages/homeBlueicon.png")
@@ -33,8 +30,8 @@ export default function TabLayout() {
         }}
       />
 
-      <Tabs.Screen  name="classes" options={{  tabBarIcon: ({ focused }) => (
-            <View style={{  backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 12, borderRadius: 14,}}>
+      <Tabs.Screen  name="classes" options={{ title: "Classes", tabBarIcon: ({ focused }) => (
+            <View style={{  backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 18, borderRadius: 14,}}>
               <Image source={ focused
                     ? require("../../src/assets/mainImages/classesBlue.png")
                     : require("../../src/assets/mainImages/classesGrayicon.png")
@@ -46,8 +43,8 @@ export default function TabLayout() {
       />
 
       
-      <Tabs.Screen name="attendance" options={{ tabBarIcon: ({ focused }) => (
-            <View  style={{  backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 10,  borderRadius: 14, }}>
+      <Tabs.Screen name="attendance" options={{ title: "Attendance", tabBarIcon: ({ focused }) => (
+            <View  style={{  backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 18,  borderRadius: 14, }}>
               <Image source={ focused
                     ? require("../../src/assets/mainImages/attendanceBlue.png")
                     : require("../../src/assets/mainImages/attendanceGrayicon.png")
@@ -60,8 +57,8 @@ export default function TabLayout() {
       />
 
    
-      <Tabs.Screen name="payments" options={{ tabBarIcon: ({ focused }) => (
-            <View style={{ backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 10, borderRadius: 14, }}>
+      <Tabs.Screen name="payments" options={{ title: "Payments",tabBarIcon: ({ focused }) => (
+            <View style={{ backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 18, borderRadius: 14, }}>
               <Image
                 source={
                   focused
@@ -76,8 +73,8 @@ export default function TabLayout() {
       />
 
       
-      <Tabs.Screen name="profile"  options={{ tabBarIcon: ({ focused }) => (
-            <View style={{ backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 10, borderRadius: 14,}}>
+      <Tabs.Screen name="profile"  options={{ title: "Profile", tabBarIcon: ({ focused }) => (
+            <View style={{ backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 18, borderRadius: 14,}}>
               <Image source={
                    focused
                     ? require("../../src/assets/mainImages/profileGrayicon.png")
