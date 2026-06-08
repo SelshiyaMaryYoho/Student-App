@@ -17,6 +17,11 @@ export const COLORS = {
   blueCircle: "#CEE5FF",
   purpleCircle: "#E0E0FF",
   greenCircle: "#94F990",
+
+  bg_red: "#FFDAD6",
+  gray_bg:"#E3E2E2",
+  black_bg:"#1B1C1C",
+  bg_light_gray:"#EFEDED"
 };
 
 export const FONTS = {
