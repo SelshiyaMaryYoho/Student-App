@@ -3,6 +3,7 @@ import { Image, View } from "react-native";
 import Header from "../../src/components/common/Header";
 
 export default function TabLayout() {
+
   return (
     <Tabs screenOptions={{
        header: () => <Header />,
@@ -17,7 +18,7 @@ export default function TabLayout() {
       }}
     >
     
-      <Tabs.Screen name="index" options={{ title: "Home", tabBarIcon: ({ focused }) => (
+      <Tabs.Screen name="home" options={{ title: "Home", tabBarIcon: ({ focused }) => (
             <View style={{ backgroundColor: focused ? "#E8F1FF" : "transparent", padding: 18, borderRadius: 14,}} >
               <Image source={
                   focused
