@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -29,8 +30,12 @@ export default function Header() {
           Student
         </Text>
 
-        <Image source={require("../../assets/mainImages/StudentProfilePhoto.png")}
-          style={{ width: 40, height: 40, borderRadius: 20, }}/>
+        <TouchableOpacity onPress={() => router.push("/(tabs)/profile")}>
+          <Image
+            source={require("../../assets/mainImages/StudentProfilePhoto.png")}
+            style={{ width: 40, height: 40, borderRadius: 20 }}
+          />
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

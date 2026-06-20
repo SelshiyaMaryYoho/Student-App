@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit"
 import dashboard from '../feature/dashboard/redux/slice'
-
+import profile from '../feature/profile/reducer/slice'
 const store = configureStore({
     reducer:{
         dashboard,
+         profile,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware(),

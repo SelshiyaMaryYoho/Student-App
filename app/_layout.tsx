@@ -11,16 +11,18 @@ function RootNavigator() {
 
   return (
     <>
-      {
-        isAuthenticated ?
+      {/* {
+        isAuthenticated ? */}
           <Stack screenOptions={{ headerShown: false }}>
             <Stack.Screen name="(tabs)" />
             <Stack.Screen name="payment-success" />
-          </Stack> :
-          <Stack screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="(auth)" />
           </Stack>
-      }
+          
+      {/* //     :
+      //     <Stack screenOptions={{ headerShown: false }}>
+      //       <Stack.Screen name="(auth)" />
+      //     </Stack> */}
+      {/* // } */}
     </>
   )
 }
