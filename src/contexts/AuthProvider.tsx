@@ -8,6 +8,7 @@ export const AuthProvider:React.FC<{children:ReactNode}>=({children})=>{
     useEffect(() => {
         (async()=>{
             const token = await GetLocalStorage('t_s_tk')
+            // RemoveLocalStorage('t_s_tk')
             setisAuthenticated(!!token)
         })()
     }, []);

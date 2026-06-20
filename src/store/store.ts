@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit"
+import classes from '../feature/classes/redux/slice'
 import dashboard from '../feature/dashboard/redux/slice'
 
 const store = configureStore({
     reducer:{
         dashboard,
+        classes,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware(),

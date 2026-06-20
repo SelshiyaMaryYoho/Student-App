@@ -1,8 +1,26 @@
+import { getTodayclassThunks } from "@/src/feature/classes/redux/thunks";
+import { getDashboardThunks } from "@/src/feature/dashboard/redux/thunks";
+import { AppDispatch, RootState } from "@/src/store/store";
+import { useEffect } from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
 import { COLORS, FONTS } from "../../src/constant/uiConstants";
 
 
 export default function HomeScreen() {
+
+  const dispatch = useDispatch<AppDispatch>()
+  const dashboard = useSelector((state:RootState)=>state.dashboard)
+  const classes = useSelector((state:RootState)=>state.classes)
+
+  useEffect(() => {
+    dispatch(getDashboardThunks())
+    dispatch(getTodayclassThunks('today'))
+  }, [dispatch]);
+
+  console.log(classes,"classes")
+
+
   return (
     <View className="flex-1 p-2 " style={{ backgroundColor: COLORS.background }}>
       <ScrollView showsVerticalScrollIndicator={false} >
